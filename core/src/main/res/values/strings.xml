@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">baseLibrary</string>
+    <string name="core_router_error">界面异常，请联系我们</string>
+</resources>

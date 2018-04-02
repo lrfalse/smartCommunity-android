@@ -1,0 +1,6 @@
+<resources>
+    <color name="user_btn_normal_color">#fc5879</color>
+    <color name="user_btn_pressed_color">#ef2c54</color>
+    <color name="user_tx_gray_color">#747474</color>
+    <color name="user_tx_gray_line_color">#a1a1a1</color>
+</resources>

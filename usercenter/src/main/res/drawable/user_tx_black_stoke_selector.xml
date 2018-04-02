@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <stroke android:width="@dimen/user_login_btn_border_size" android:color="@color/black"></stroke>
+            <corners android:radius="3dp"></corners>
+            <gradient android:endColor="@color/white" android:startColor="@color/white"></gradient>
+        </shape>
+    </item>
+</selector>

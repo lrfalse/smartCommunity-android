@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <stroke android:width="@dimen/user_login_btn_border_size" android:color="@color/user_btn_pressed_color"></stroke>
+            <corners android:radius="@dimen/user_login_btn_radius_size"></corners>
+            <gradient android:endColor="@color/white" android:startColor="@color/white"></gradient>
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <shape>
+            <stroke android:width="@dimen/user_login_btn_border_size" android:color="@color/user_tx_gray_color"></stroke>
+            <corners android:radius="@dimen/user_login_btn_radius_size"></corners>
+            <gradient android:endColor="@color/white" android:startColor="@color/white"></gradient>
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <stroke android:width="@dimen/user_login_btn_border_size" android:color="@color/user_btn_normal_color"></stroke>
+            <corners android:radius="@dimen/user_login_btn_radius_size"></corners>
+            <gradient android:endColor="@color/white" android:startColor="@color/white"></gradient>
+        </shape>
+    </item>
+</selector>

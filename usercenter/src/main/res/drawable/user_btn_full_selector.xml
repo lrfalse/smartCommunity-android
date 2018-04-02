@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="@dimen/user_login_btn_radius_size"></corners>
+            <gradient android:endColor="@color/user_btn_pressed_color" android:startColor="@color/user_btn_pressed_color"></gradient>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="@dimen/user_login_btn_radius_size"></corners>
+            <gradient android:endColor="@color/user_btn_normal_color" android:startColor="@color/user_btn_normal_color"></gradient>
+        </shape>
+    </item>
+</selector>
