@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="KeyCircleView">
+        <attr name="key_radius" format="dimension"></attr>
+    </declare-styleable>
+</resources>

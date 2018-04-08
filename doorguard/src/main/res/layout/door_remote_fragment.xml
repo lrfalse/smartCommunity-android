@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/door_round_white_background"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/door_btn_yellow_selector"
+            android:text="自动识别钥匙串"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <com.ysjkj.smart.community.door.view.KeyCircleView
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_alignParentTop="true"
+            app:key_radius="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="手机远程开门"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

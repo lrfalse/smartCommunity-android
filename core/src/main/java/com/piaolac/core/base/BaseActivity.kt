@@ -1,6 +1,7 @@
 package com.piaolac.core.base
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.alibaba.android.arouter.launcher.ARouter
@@ -39,6 +40,30 @@ abstract class BaseActivity<out P : BasePresenter<IModel, IView>> : RxAppCompatA
     fun presenter(): P {
         return presenter
     }
+
+    fun replaceFragment(contentId: Int, fragment: Fragment, tag: String = fragment.javaClass.name) {
+        if (supportFragmentManager.fragments.contains(fragment)) {
+            supportFragmentManager.beginTransaction().show(fragment).commit()
+        } else {
+            supportFragmentManager.beginTransaction().replace(contentId, fragment, tag).commit()
+        }
+    }
+
+    fun addFragment(contentId: Int, fragment: Fragment, tag: String = fragment.javaClass.name) {
+        if (supportFragmentManager.fragments.contains(fragment)) {
+            supportFragmentManager.beginTransaction().show(fragment).commit()
+        } else {
+            supportFragmentManager.beginTransaction().add(contentId, fragment, tag).commit()
+        }
+    }
+
+    fun removeFragment(fragment: Fragment) {
+        if (!supportFragmentManager.fragments.contains(fragment)) {
+            return
+        }
+        supportFragmentManager.beginTransaction().remove(fragment).commit()
+    }
+
 
 }
 

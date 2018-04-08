@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="305dp"
+    android:layout_height="393dp"
+    android:layout_gravity="center">
+
+
+    <ImageView
+        android:id="@+id/iv_ad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/iv_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/door_red_packet_body" />
+
+    <ImageView
+        android:id="@+id/iv_cap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/door_red_packet_cap" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_shop_icon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:src="@color/white" />
+
+    <TextView
+        android:id="@+id/tx_shop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_shop_icon"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
+        android:text="时光漫咖啡"
+        android:textColor="@color/white"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/tx_send_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx_shop"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="送你一个开门红包"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tx_bless"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx_send_tip"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="恭喜发财,大吉大利"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tx_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx_bless"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="10.00元"
+        android:textColor="#f8d798"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/btn_open"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/door_btn_yellow_selector"
+        android:text="立即拆红包"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tx_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal"
+        android:text="已存入钱包"
+        android:textColor="#ae253e" />
+</RelativeLayout>
+

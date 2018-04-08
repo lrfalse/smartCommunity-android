@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.alibaba.android.arouter.launcher.ARouter
 import com.piaolac.core.mvp.BasePresenter
 import com.piaolac.core.utils.ReflectionUtils
 import com.trello.rxlifecycle2.components.support.RxFragment
@@ -28,6 +29,7 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
             builder = this
             isLazyLoad = lazyLoad
         }.apply(initViewConfig()).createContent()
+        ARouter.getInstance().inject(this)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

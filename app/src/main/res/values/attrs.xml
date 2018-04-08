@@ -1,0 +1,7 @@
+<resources>
+    <declare-styleable name="ArcMenuView">
+        <attr name="arc_margin_bottom" format="dimension"></attr>
+        <attr name="arc_radius" format="dimension"></attr>
+        <attr name="arc_mask_color" format="color"></attr>
+    </declare-styleable>
+</resources>

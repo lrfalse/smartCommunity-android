@@ -58,6 +58,6 @@ dependencies {
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     compile 'com.github.arcadefire:nice-spinner:1.3.1'
-    implementation project(':core')
+    implementation project(':provider')
 
 }

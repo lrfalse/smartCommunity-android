@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="25dp"></corners>
+            <gradient android:endColor="@color/door_red_packet_get_btn_color_presed" android:startColor="@color/door_red_packet_get_btn_color_presed"></gradient>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="25dp"></corners>
+            <gradient android:endColor="@color/door_red_packet_get_btn_color_normal" android:startColor="@color/door_red_packet_get_btn_color_normal"></gradient>
+        </shape>
+    </item>
+</selector>

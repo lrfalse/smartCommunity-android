@@ -3,7 +3,7 @@
     package="com.ysjkj.smart.community.user">
 
     <application
-        android:name="com.piaolac.core.base.BaseApplication"
+        android:name="com.ysjkj.smart.community.provider.Application"
         android:allowBackup="true"
         android:label="用户中心"
         android:supportsRtl="true"

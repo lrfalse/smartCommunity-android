@@ -1,0 +1,8 @@
+<resources>
+    <color name="door_red_packet_get_btn_color_normal">#fcab53</color>
+    <color name="door_red_packet_get_btn_color_presed">#f59832</color>
+    <color name="door_shake_circle_bg_color">#e5e5e5</color>
+    <color name="door_shake_arc_1_color">#51d2c2</color>
+    <color name="door_shake_arc_2_color">#e29a4b</color>
+    <color name="door_shake_arc_3_color">#8c88ff</color>
+</resources>

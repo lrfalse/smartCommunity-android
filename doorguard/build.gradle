@@ -33,7 +33,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
     implementation project(':core')
+    implementation project(':provider')
 }

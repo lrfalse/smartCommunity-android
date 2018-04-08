@@ -34,6 +34,36 @@ object RouterPath {
              */
             const val SET_HOUSE_INFO = "/userCenter/setHouseInfo"
         }
+    }
 
+    class DoorGuard {
+        companion object {
+
+            /**
+             * 红包界面
+             */
+            const val RED_PACKET_FRAGMENT = "/doorGuard/redPacketFragment"
+
+            /**
+             * 二维码开门界面
+             */
+            const val QR_CODE_FRAGMENT = "/doorGuard/qrCodeFragment"
+
+            /**
+             * 密码开门
+             */
+            const val PWD_FRAGMENT = "/doorGuard/pwdFragment"
+
+            /**
+             * 摇一摇
+             */
+            const val SHAKE_FRAGMENT = "/doorGuard/shakeFragment"
+
+            /**
+             * 远程开门
+             */
+            const val REMOTE_FRAGMENT = "/doorGuard/remoteFragment"
+
+        }
     }
 }
