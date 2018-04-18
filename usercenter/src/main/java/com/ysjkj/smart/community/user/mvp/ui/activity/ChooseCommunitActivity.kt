@@ -22,6 +22,7 @@ class ChooseCommunitActivity : BaseActivity<EmptyPresenter>() {
 
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
         withContent(R.layout.user_activity_choose_communit).withToolbar("", true)
+
     }
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class ChooseCommunitActivity : BaseActivity<EmptyPresenter>() {
         rv_communits.apply {
             var selectIndex = -1
             linear()
-            bindAdapter(mutableListOf<String>().apply { (1..100).forEach { add("社区$it") } }, R.layout.user_recycle_item_simple, mapOf(R.id.tx_title to "")) { baseViewHolder: BaseViewHolder, s: String ->
+            bindAdapter(mutableListOf<String>().apply { (1..3).forEach { add("社区$it") } }, R.layout.user_recycle_item_simple, mapOf(R.id.tx_title to "")) { baseViewHolder: BaseViewHolder, s: String ->
                 baseViewHolder.getView<TextView>(R.id.tx_title).setCompoundDrawablesWithIntrinsicBounds(0, 0, if (baseViewHolder.adapterPosition == selectIndex) R.drawable.user_choose else 0, 0)
                 baseViewHolder.setGone(R.id.tx_head, baseViewHolder.adapterPosition == 0)
                 baseViewHolder.setGone(R.id.tx_line, baseViewHolder.adapterPosition == 0)

@@ -1,7 +1,8 @@
-package com.ysjkj.smart.community.provider
+package com.ysjkj.smart.community.provider.base
 
 import android.content.Context
 import android.support.multidex.MultiDex
+import com.mob.MobSDK
 import com.piaolac.core.base.BaseApplication
 import com.ysjkj.smart.community.umeng.ConfigUtils
 
@@ -12,6 +13,7 @@ class Application : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         ConfigUtils.init(this)
+        MobSDK.init(this)
     }
 
     override fun attachBaseContext(base: Context?) {

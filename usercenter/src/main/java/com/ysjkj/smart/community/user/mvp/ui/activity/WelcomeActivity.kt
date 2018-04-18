@@ -1,6 +1,7 @@
 package com.ysjkj.smart.community.user.mvp.ui.activity
 
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.piaolac.core.base.BaseActivity
 import com.piaolac.core.base.ViewBuilder
 import com.piaolac.core.ext.router
@@ -13,6 +14,7 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
 /**
  * 欢迎界面（选择注册、或者登录）
  */
+@Route(path = RouterPath.UserCenter.WELCOME)
 class WelcomeActivity : BaseActivity<EmptyPresenter>() {
 
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
@@ -21,7 +23,7 @@ class WelcomeActivity : BaseActivity<EmptyPresenter>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         btn_user_login.onClick {
-            router(RouterPath.UserCenter.FORGET_PASSWORD).navigation()
+            router(RouterPath.UserCenter.LOGIN).navigation()
         }
         btn_user_register.onClick {
             router(RouterPath.UserCenter.REGISTER_ACCOUNT).navigation()

@@ -1,6 +1,7 @@
 package com.piaolac.core.base
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -23,6 +24,7 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
     private var isFirstLoad = true
     private var isLazyLoad: Boolean = false
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        presenter?.context(context)
         isFirstLoad = true
         isPrepared = true
         return ViewBuilder(activity).apply {
@@ -87,5 +89,29 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
     override fun onDestroyView() {
         super.onDestroyView()
         isPrepared = false
+    }
+
+
+    fun replaceFragment(contentId: Int, fragment: Fragment, tag: String = fragment.javaClass.name) {
+        if (childFragmentManager.fragments.contains(fragment)) {
+            childFragmentManager.beginTransaction().show(fragment).commit()
+        } else {
+            childFragmentManager.beginTransaction().replace(contentId, fragment, tag).commit()
+        }
+    }
+
+    fun addFragment(contentId: Int, fragment: Fragment, tag: String = fragment.javaClass.name) {
+        if (childFragmentManager.fragments.contains(fragment)) {
+            childFragmentManager.beginTransaction().show(fragment).commit()
+        } else {
+            childFragmentManager.beginTransaction().add(contentId, fragment, tag).commit()
+        }
+    }
+
+    fun removeFragment(fragment: Fragment) {
+        if (!childFragmentManager.fragments.contains(fragment)) {
+            return
+        }
+        childFragmentManager.beginTransaction().remove(fragment).commit()
     }
 }

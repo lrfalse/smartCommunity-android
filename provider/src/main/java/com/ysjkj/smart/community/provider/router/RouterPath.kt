@@ -5,15 +5,30 @@ package com.ysjkj.smart.community.provider.router
  */
 object RouterPath {
 
+    class Main {
+        companion object {
+            /**
+             * 主页
+             */
+            const val HOME = "/main/home"
+        }
+    }
+
     /**
      * 用户中心
      */
     class UserCenter {
         companion object {
+
             /**
-             * 忘记密码
+             * 欢迎页
              */
-            const val FORGET_PASSWORD = "/userCenter/login"
+            const val WELCOME = "/userCenter/welcome"
+
+            /**
+             * 用户登录
+             */
+            const val LOGIN = "/userCenter/login"
             /**
              * 注册账号
              */
@@ -33,6 +48,20 @@ object RouterPath {
              * 设置房屋信息
              */
             const val SET_HOUSE_INFO = "/userCenter/setHouseInfo"
+        }
+    }
+
+    class Notice {
+        companion object {
+            /**
+             * banner公告
+             */
+            const val BANNER = "/notice/banner"
+
+            /**
+             * 公告列表
+             */
+            const val LIST ="/notice/list"
         }
     }
 

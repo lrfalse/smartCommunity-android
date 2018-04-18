@@ -1,4 +1,4 @@
-package com.piaolac.core.router
+package com.ysjkj.smart.community.provider.router
 
 import android.content.Context
 import com.alibaba.android.arouter.facade.Postcard

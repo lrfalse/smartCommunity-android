@@ -1,0 +1,5 @@
+<resources>
+    <color name="notice_banner_indicator_unselect">#99ffffff</color>
+    <color name="notice_gray_bg">#eeeeee</color>
+    <color name="notice_transparent">#00000000</color>
+</resources>

@@ -2,6 +2,7 @@ package com.ysjkj.smart.community.mvp.ui.activity
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.piaolac.core.base.ViewBuilder
 import com.piaolac.core.ext.router
 import com.piaolac.core.mvp.EmptyPresenter
@@ -18,6 +19,7 @@ import org.jetbrains.anko.support.v4.onPageChangeListener
 /**
  * 主页
  */
+@Route(path = RouterPath.Main.HOME)
 class HomeActivity : BaseUMengActivity<EmptyPresenter>() {
 
     val qrFragment by lazy {

@@ -11,9 +11,11 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/doorguard" />
+            <option value="$PROJECT_DIR$/notice" />
             <option value="$PROJECT_DIR$/provider" />
             <option value="$PROJECT_DIR$/umeng" />
             <option value="$PROJECT_DIR$/usercenter" />
+            <option value="$PROJECT_DIR$/verify" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

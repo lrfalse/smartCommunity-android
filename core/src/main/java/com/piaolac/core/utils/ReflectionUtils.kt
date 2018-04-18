@@ -26,8 +26,11 @@ object ReflectionUtils {
                     .genericSuperclass as ParameterizedType).actualTypeArguments[i] as Class<T>)
                     .newInstance()
         } catch (e: InstantiationException) {
+            e.printStackTrace()
         } catch (e: IllegalAccessException) {
+            e.printStackTrace()
         } catch (e: ClassCastException) {
+            e.printStackTrace()
         }
         return null
     }

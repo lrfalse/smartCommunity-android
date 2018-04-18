@@ -6,9 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/doorguard/doorguard.iml" filepath="$PROJECT_DIR$/doorguard/doorguard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notice/notice.iml" filepath="$PROJECT_DIR$/notice/notice.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />
       <module fileurl="file://$PROJECT_DIR$/usercenter/usercenter.iml" filepath="$PROJECT_DIR$/usercenter/usercenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/verify/verify.iml" filepath="$PROJECT_DIR$/verify/verify.iml" />
     </modules>
   </component>
 </project>

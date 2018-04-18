@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.EditText
 import android.widget.TextView
 import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.launcher.ARouter
@@ -72,6 +73,7 @@ fun Activity.translucentStatus(activity: Activity) {
     }
 }
 
+/**---------------------------------RecyclerView begin --------------------------------**/
 
 inline fun RecyclerView.grid(spanCount: Int, size: Int = 0, colorRes: Int = R.color.white) {
     layout(GridLayoutManager(context, spanCount), size, colorRes)
@@ -114,3 +116,13 @@ inline fun <T : Any> RecyclerView.bindAdapter(data: List<T>, layoutId: Int, bind
     return adapter as BaseQuickAdapter<T, BaseViewHolder>
 }
 
+/**---------------------------------------RecyclerView end --------------------------------**/
+
+
+/**---------------------------------------EditText begin --------------------------------**/
+fun EditText.value() = text.toString()
+
+fun EditText.trimValue() = value().trim()
+
+
+/**---------------------------------------EditText end --------------------------------**/

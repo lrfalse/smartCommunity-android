@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ysjkj.smart.community.user">
 
     <application>
-        <activity android:name=".mvp.ui.activity.WelcomeActivity"></activity>
+        <activity android:name=".mvp.ui.activity.WelcomeActivity">
+        </activity>
+        <activity
+            android:name=".mvp.ui.activity.LoginActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".mvp.ui.activity.RegisterActivity" />
+        <activity android:name=".mvp.ui.activity.SetPasswordActivity" />
+        <activity android:name=".mvp.ui.activity.ChooseCommunitActivity" />
+        <activity android:name=".mvp.ui.activity.SetHouseInfoActivity"></activity>
     </application>
+
 </manifest>

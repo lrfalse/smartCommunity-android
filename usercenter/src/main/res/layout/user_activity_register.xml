@@ -52,6 +52,7 @@
                 android:textColorHint="@color/user_tx_gray_color">
 
                 <android.support.design.widget.TextInputEditText
+                    android:id="@+id/et_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -96,6 +97,7 @@
                     android:textColorHint="@color/user_tx_gray_color">
 
                     <android.support.design.widget.TextInputEditText
+                        android:id="@+id/et_code"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@null"

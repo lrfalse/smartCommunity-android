@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_notice"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:indicator_drawable_selected="@color/white"
+        app:indicator_drawable_unselected="@color/notice_banner_indicator_unselect"
+        app:is_auto_play="true">
+
+    </com.youth.banner.Banner>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/notcie_banner"
+        android:gravity="center_vertical"
+        android:text="社区公告"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <com.sunfusheng.marqueeview.MarqueeView
+            android:id="@+id/marquee_notice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:mvAnimDuration="1000"
+            app:mvDirection="bottom_to_top"
+            app:mvInterval="3000"
+            app:mvSingleLine="true"
+            app:mvTextColor="@color/black"
+            app:mvTextSize="14dp" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stx_more"
+            android:layout_width="90dp"
+            app:sRightTextSize="12dp"
+            android:layout_weight="0"
+            app:sDividerLineType="none"
+            app:sRightIconRes="@drawable/notice_more"
+            app:sRightTextColor="@color/black"
+            app:sRightTextString="去看看"
+            android:layout_height="match_parent"></com.allen.library.SuperTextView>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="ind_max_width" format="dimension"></attr>
+        <attr name="ind_size" format="dimension"></attr>
+        <attr name="ind_radius" format="dimension"></attr>
+        <attr name="ind_color" format="color"></attr>
+        <attr name="ind_selected_color" format="color"></attr>
+    </declare-styleable>
+</resources>

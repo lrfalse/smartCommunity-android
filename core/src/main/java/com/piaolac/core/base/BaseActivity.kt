@@ -22,6 +22,7 @@ abstract class BaseActivity<out P : BasePresenter<IModel, IView>> : RxAppCompatA
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        presenter?.context(this)
         translucentStatus(this)
         setContentView(ViewBuilder(this).apply {
             builder = this

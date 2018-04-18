@@ -68,6 +68,8 @@ class BindViewTransformer<T>(var lifecycleProvider: LifecycleProvider<*>?, var s
                         else -> BaseApplication.context.toast("系统异常")
                     }
 
+                    it.printStackTrace()
+
                     lifecycleProvider?.apply {
                         refreshView()?.apply {
                             finishRefresh()

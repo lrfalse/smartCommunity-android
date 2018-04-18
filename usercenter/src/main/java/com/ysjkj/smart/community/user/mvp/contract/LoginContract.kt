@@ -1,5 +1,6 @@
 package com.ysjkj.smart.community.user.mvp.contract
 
+import com.piaolac.core.mvp.IModel
 import com.piaolac.core.mvp.IView
 
 /**
@@ -7,5 +8,9 @@ import com.piaolac.core.mvp.IView
  */
 interface LoginContract {
     interface View : IView {
+    }
+
+    interface Model:IModel{
+
     }
 }
