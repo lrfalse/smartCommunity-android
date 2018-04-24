@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:src="@drawable/umeng_socialize_qq"
+            android:layout_height="50dp" />
+
+        <com.allen.library.SuperTextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"
+            app:sDividerLineType="none"
+            app:sUseRipple="false"
+            app:sLeftTextSize="14dp"
+            app:sLeftTextString="王老五"
+            app:sRightTextSize="12dp"
+            app:sRightTextString="2018-05-20 22:33"></com.allen.library.SuperTextView>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingTop="10dp"
+        android:text="真的是太好用了，这个APP相当的好用不用后悔死"
+        android:textColor="@color/activite_text_gray_color" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_05"
+        android:background="@color/activite_gray_bg" />
+</LinearLayout>

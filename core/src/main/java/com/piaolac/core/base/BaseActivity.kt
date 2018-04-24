@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.alibaba.android.arouter.launcher.ARouter
-import com.piaolac.core.ext.translucentStatus
 import com.piaolac.core.mvp.BasePresenter
 import com.piaolac.core.mvp.IModel
 import com.piaolac.core.mvp.IView
@@ -23,7 +22,7 @@ abstract class BaseActivity<out P : BasePresenter<IModel, IView>> : RxAppCompatA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         presenter?.context(this)
-        translucentStatus(this)
+//        translucentStatus(this)
         setContentView(ViewBuilder(this).apply {
             builder = this
         }.apply(initViewConfig()).createContent())

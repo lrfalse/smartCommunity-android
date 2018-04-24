@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="main_tx_gray_normal">#7e7e7e</color>
     <color name="main_arc_menu_mask">#6f000000</color>
+    <color name="main_gray_bg">#eeeeee</color>
 </resources>

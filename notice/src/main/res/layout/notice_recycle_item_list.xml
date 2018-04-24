@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:text="小区公告18号晚上停水"
+            android:textColor="@color/black"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:drawableLeft="@drawable/notice_comment"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColor="@color/notice_text_gray_color"
+            android:textSize="@dimen/commont_count_size"
+            android:paddingRight="10dp"
+            android:text="11" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:drawableLeft="@drawable/notice_browse"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="@dimen/browse_count_size"
+            android:textColor="@color/notice_text_gray_color"
+            android:text="11" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_05"
+        android:visibility="gone"
+        android:background="@color/notice_gray_bg" />
+
+    <ImageView
+        android:id="@+id/iv_notice"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <com.allen.library.SuperTextView
+        android:id="@+id/stx_more"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:sLeftTextColor="@color/black"
+        app:sLeftTextSize="11dp"
+        app:sLeftTextString="2018-12-22"
+        app:sRightIconRes="@drawable/provider_pink_arrow_right"
+        app:sRightTextColor="@color/black"
+        app:sRightTextSize="12dp"
+        app:sRightTextString="去看看">
+
+    </com.allen.library.SuperTextView>
+</LinearLayout>

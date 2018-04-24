@@ -1,0 +1,10 @@
+<resources>
+    <color name="provider_btn_pink_normal_color">#fc5879</color>
+    <color name="provider_btn_pink_pressed_color">#ef2c54</color>
+    <color name="provider_tx_gray_color">#747474</color>
+    <color name="provider_tx_gray_line_color">#a1a1a1</color>
+    <color name="provider_bg_gray_color">#eeeeee</color>
+    <color name="provider_bg_paress_gray_color">#d7d6d6</color>
+    <color name="provider_vp_indicator_unselected_color">#99ffffff</color>
+    <color name="provider_transparent_color">#00000000</color>
+</resources>

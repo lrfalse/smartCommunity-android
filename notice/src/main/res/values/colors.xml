@@ -2,4 +2,6 @@
     <color name="notice_banner_indicator_unselect">#99ffffff</color>
     <color name="notice_gray_bg">#eeeeee</color>
     <color name="notice_transparent">#00000000</color>
+    <color name="notice_corner_mark">#fc5879</color>
+    <color name="notice_text_gray_color">#494f52</color>
 </resources>

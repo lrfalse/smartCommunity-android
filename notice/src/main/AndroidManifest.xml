@@ -3,7 +3,8 @@
     package="com.ysjkj.smart.community.notice">
 
     <application>
-        <activity android:name=".mvp.ui.activity.NoticeListActivity"></activity>
+        <activity android:name=".mvp.ui.activity.ListActivity" />
+        <activity android:name=".mvp.ui.activity.DetailActivity"></activity>
     </application>
 
 </manifest>

@@ -53,7 +53,7 @@ class ViewBuilder(var ctx: Context) {
         return this
     }
 
-    fun withToolbar(title: String = "", showBack: Boolean = false, backIconRes: Int = R.drawable.core_toolbar_back, menuId: Int = 0, toolbar: Toolbar.() -> Unit = {}): ViewBuilder {
+    fun withToolbar(title: String = "", showBack: Boolean = false, backIconRes: Int = R.drawable.core_toolbar_back, menuId: Int = 0, stytle: Int = R.style.Toolbar_Theme, toolbar: Toolbar.() -> Unit = {}): ViewBuilder {
         if (xmlIsRoot) {
             rootLayout?.apply {
                 findViewById<Toolbar>(R.id.common_toolbar_view)?.apply {
@@ -65,7 +65,7 @@ class ViewBuilder(var ctx: Context) {
         } else {
             Toolbar(ContextThemeWrapper(
                     ctx,
-                    R.style.Toolbar_Theme
+                    stytle
             )).apply {
                 popupTheme = R.style.Toolbar_PopupTheme
                 this.title = title
@@ -199,12 +199,15 @@ class ViewBuilder(var ctx: Context) {
             if (context.theme.resolveAttribute(android.R.attr.actionBarSize, typeValue, true)) {
                 toolBarHegith = TypedValue.complexToDimensionPixelSize(typeValue.data, context.resources.displayMetrics)
             }
-            val stateHeight = context.statusBarHeight()
+            var stateHeight = context.statusBarHeight()
+
+            stateHeight = 0
             id = R.id.common_toolbar_view
             popupTheme = R.style.Toolbar_PopupTheme
             setPadding(paddingLeft, stateHeight, paddingRight, paddingBottom)
             setContentInsetsAbsolute(0, 0)
             setContentInsetsRelative(0, 0)
+
             if (menuId != 0) {
                 inflateMenu(menuId)
             }
@@ -222,12 +225,13 @@ class ViewBuilder(var ctx: Context) {
             TextView(ContextThemeWrapper(context, R.style.Toolbar_Title)).apply {
                 id = R.id.common_toolbar_title_view
                 text = title
-                setTextSize(TypedValue.COMPLEX_UNIT_PX,resources.getDimension(R.dimen.toolbar_text_size))
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, resources.getDimension(R.dimen.toolbar_text_size))
                 addView(this, Toolbar.LayoutParams(wrapContent, wrapContent, Gravity.CENTER))
             }
+            toolBarConfig.invoke(this)
             title = ""
 
-            toolBarConfig.invoke(this)
+
             root?.addView(this, 0, ViewGroup.LayoutParams(matchParent, toolBarHegith + stateHeight))
         }
     }

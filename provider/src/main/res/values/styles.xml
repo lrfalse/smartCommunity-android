@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="Provider"></style>
+
+    <style name="Provider.TextAppearance" parent="android:TextAppearance">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Provider.TextAppearance.BoldTitle" parent="Provider.TextAppearance">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Provider.TextAppearance.BoldSubTitle" parent="Provider.TextAppearance">
+        <item name="android:textSize">17dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>

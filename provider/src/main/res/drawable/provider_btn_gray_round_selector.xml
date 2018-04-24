@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="30dp"></corners>
+            <gradient android:endColor="@color/provider_bg_paress_gray_color" android:startColor="@color/provider_bg_paress_gray_color"></gradient>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <corners android:radius="30dp"></corners>
+            <gradient android:endColor="@color/provider_bg_gray_color" android:startColor="@color/provider_bg_gray_color"></gradient>
+        </shape>
+    </item>
+</selector>

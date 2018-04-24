@@ -1,1 +1,1 @@
-include ':app', ':core', ':usercenter', ':doorguard', ':provider', ':umeng', ':notice', ':verify'
+include ':app', ':core', ':usercenter', ':doorguard', ':provider', ':umeng', ':notice', ':verify', ':activitie', ':life'

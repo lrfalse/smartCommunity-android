@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_business"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        app:indicator_drawable_selected="@color/white"
+        app:indicator_drawable_unselected="@color/provider_vp_indicator_unselected_color"
+        app:is_auto_play="true"></com.youth.banner.Banner>
+
+</merge>

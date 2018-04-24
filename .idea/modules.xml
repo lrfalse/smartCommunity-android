@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SmartCommunity.iml" filepath="$PROJECT_DIR$/SmartCommunity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activitie/activitie.iml" filepath="$PROJECT_DIR$/activitie/activitie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activitie/activities.iml" filepath="$PROJECT_DIR$/activitie/activities.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/doorguard/doorguard.iml" filepath="$PROJECT_DIR$/doorguard/doorguard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/life/life.iml" filepath="$PROJECT_DIR$/life/life.iml" />
       <module fileurl="file://$PROJECT_DIR$/notice/notice.iml" filepath="$PROJECT_DIR$/notice/notice.iml" />
       <module fileurl="file://$PROJECT_DIR$/provider/provider.iml" filepath="$PROJECT_DIR$/provider/provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/umeng/umeng.iml" filepath="$PROJECT_DIR$/umeng/umeng.iml" />

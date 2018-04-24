@@ -29,6 +29,9 @@ class HomeFragment : BaseFragment<EmptyPresenter>() {
         (router(RouterPath.Notice.BANNER).navigation() as? Fragment)?.apply {
             addFragment(R.id.fl_notice, this)
         }
+        (router(RouterPath.Activitie.BANNER).navigation() as? Fragment)?.apply {
+            addFragment(R.id.fl_activite, this)
+        }
 
     }
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.ysjkj.smart.community.notice.mvp.ui.activity.DetailActivity">
+
+        <ImageView
+            android:id="@+id/iv_notice"
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0"
+                android:background="@drawable/notice_corner_mark"
+                android:gravity="center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:text="升级通知"
+                android:textColor="@color/white"
+                android:textSize="14dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/notice_comment"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/notice_text_gray_color"
+                android:text="11"
+                android:textSize="@dimen/commont_count_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:drawableLeft="@drawable/notice_browse"
+                android:drawablePadding="5dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="11"
+                android:textColor="@color/notice_text_gray_color"
+                android:textSize="@dimen/browse_count_size" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingTop="40dp"
+            android:paddingRight="20dp"
+            android:textSize="15dp"
+
+            android:textColor="@color/black"
+            android:text="尊敬的业主，邻鲤的商城将于2018年4月5日13:00--23:00进行升级维护，期间APP其余功能不收影响均可正常使用，商城更新完毕后将有更多好玩的功能上线，尽情期待。"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:paddingTop="40dp"
+            android:gravity="right"
+            android:paddingRight="20dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/black"
+            android:text="邻鲤小区管理出\n2018-04-4"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/provider_end"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:background="@color/notice_gray_bg"
+            android:layout_height="5dp" />
+        
+        <com.allen.library.SuperTextView
+            android:layout_width="match_parent"
+            app:sLeftTextString="评论(103)"
+            app:sRightIconRes="@drawable/provider_gray_arrow_right"
+            android:layout_height="40dp"></com.allen.library.SuperTextView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcl_comment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

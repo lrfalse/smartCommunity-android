@@ -38,8 +38,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
+    api 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     api 'com.android.support:multidex:1.0.3'
@@ -47,6 +48,9 @@ dependencies {
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
     api 'com.youth.banner:banner:1.4.10'
     api 'com.sunfusheng:marqueeview:1.3.3'
+    api 'com.github.lsjwzh.RecyclerViewPager:lib:v1.1.2@aar'
+    api 'com.github.takusemba:multisnaprecyclerview:1.3.3'
+    api 'com.sdsmdg.harjot:materialshadows:1.2.5'
     api project(':umeng')
     api project(':core')
     api project(':verify')

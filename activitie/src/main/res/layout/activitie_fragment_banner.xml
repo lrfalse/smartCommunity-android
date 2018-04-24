@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:gravity="center_vertical"
+            android:text="社区活动"
+            android:textAppearance="@style/Provider.TextAppearance.BoldTitle"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:paddingLeft="5dp"
+            android:text="好吃好喝好玩都在这"
+            android:textColor="@color/activite_text_gray_color"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tx_page_index"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/provider_more"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="1/5"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner_activitie"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        app:indicator_drawable_selected="@color/white"
+        app:indicator_drawable_unselected="@color/black"
+        app:is_auto_play="false"></com.youth.banner.Banner>
+
+
+</LinearLayout>

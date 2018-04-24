@@ -15,6 +15,28 @@ object RouterPath {
     }
 
     /**
+     * 生活
+     */
+    class Life {
+        companion object {
+            /**
+             * 生活主页fragment
+             */
+            const val HOME_FRAGMENT = "/life/mainFragment"
+
+            /**
+             * 商圈fragment
+             */
+            const val BUSINESS_FRAGMENT ="/life/bussinessFragment"
+
+            /**
+             * 邻居一起来 fragment
+             */
+            const val GROUP_SHOPPING_FRAGMENT ="/life/groupShoppingFragment"
+        }
+    }
+
+    /**
      * 用户中心
      */
     class UserCenter {
@@ -61,7 +83,30 @@ object RouterPath {
             /**
              * 公告列表
              */
-            const val LIST ="/notice/list"
+            const val LIST = "/notice/list"
+            /**
+             * 公告详情
+             */
+            const val DETAIL = "/notice/detail"
+        }
+    }
+
+    class Activitie {
+        companion object {
+            /**
+             * banner
+             */
+            const val BANNER = "/activitie/banner"
+
+            /**
+             * 列表界面
+             */
+            const val LIST = "/activitie/list"
+
+            /**
+             * 列表界面
+             */
+            const val DETAIL = "/activitie/detail"
         }
     }
 

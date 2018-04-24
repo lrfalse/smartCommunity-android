@@ -17,6 +17,7 @@ import com.trello.rxlifecycle2.components.support.RxFragment
  */
 @Suppress("LeakingThis")
 abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar.OnMenuItemClickListener, IViewConfig {
+
     lateinit var builder: ViewBuilder
     private var presenter: P = ReflectionUtils.getSuperClassGenricType(this, 0)!!
     private var isFragmentVisible: Boolean = false
@@ -114,4 +115,6 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
         }
         childFragmentManager.beginTransaction().remove(fragment).commit()
     }
+
+
 }
