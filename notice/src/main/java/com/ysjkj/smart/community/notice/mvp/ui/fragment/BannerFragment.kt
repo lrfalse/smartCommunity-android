@@ -9,10 +9,12 @@ import com.piaolac.core.base.BaseFragment
 import com.piaolac.core.base.ViewBuilder
 import com.piaolac.core.ext.router
 import com.piaolac.core.glide.GlideApp
-import com.piaolac.core.mvp.EmptyPresenter
 import com.youth.banner.BannerConfig
 import com.youth.banner.loader.ImageLoader
 import com.ysjkj.smart.community.notice.R
+import com.ysjkj.smart.community.notice.mvp.contract.BannerContract
+import com.ysjkj.smart.community.notice.mvp.model.ResponseMarqueeNotice
+import com.ysjkj.smart.community.notice.mvp.presenter.BannerPresenter
 import com.ysjkj.smart.community.provider.router.RouterPath
 import kotlinx.android.synthetic.main.notice_fragment_banner.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
@@ -22,19 +24,25 @@ import org.jetbrains.anko.sdk25.coroutines.onClick
  * @author yangqiang
  * @create 2018-04-17 下午5:21
  **/
-@Route(path = RouterPath.Notice.BANNER)
-class BannerFragment : BaseFragment<EmptyPresenter>() {
+@Route(path = RouterPath.Notice.BANNER_FRAGMENT)
+class BannerFragment : BaseFragment<BannerPresenter>(), BannerContract.View {
+
+    override fun onNoticeResult(result: ResponseMarqueeNotice) {
+        marquee_notice.apply {
+            if (result.list.isNotEmpty()) {
+                startWithList(result.list)
+            }
+        }
+    }
+
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
         withContent(R.layout.notice_fragment_banner)
     }
 
     override fun initView(view: View?, savedInstanceState: Bundle?) {
 
-        marquee_notice.apply {
-            startWithList(mutableListOf("小区4月24号晚上停电", "小区5月3号全天停水", "小区6月2号全天停电"))
-            setOnItemClickListener { position, textView ->
-
-            }
+        presenter {
+            noticeList("1")
         }
 
         banner_notice.apply {

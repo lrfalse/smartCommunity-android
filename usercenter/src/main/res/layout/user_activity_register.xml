@@ -141,7 +141,7 @@
             android:layout_weight="1">
 
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/floating_action_button"
+                android:id="@+id/fbtn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

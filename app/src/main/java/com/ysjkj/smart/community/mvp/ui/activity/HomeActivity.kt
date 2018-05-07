@@ -3,6 +3,7 @@ package com.ysjkj.smart.community.mvp.ui.activity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.piaolac.core.base.AppManager
 import com.piaolac.core.base.ViewBuilder
 import com.piaolac.core.ext.router
 import com.piaolac.core.mvp.EmptyPresenter
@@ -42,6 +43,7 @@ class HomeActivity : BaseUMengActivity<EmptyPresenter>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        AppManager.finishOtherActivitys(this)
         initTabs()
         initArcMenu()
     }

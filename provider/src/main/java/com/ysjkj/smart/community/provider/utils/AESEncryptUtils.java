@@ -21,7 +21,7 @@ import javax.crypto.spec.SecretKeySpec;
  * @date (开发日期): 2018/4/3 13:49
  **/
 public class AESEncryptUtils {
-    private static String KEY = "I8jb59qxzrW2H2BEk1lTGmHarkmv8pqE";                 //加密用的Key 可以用26个字母和数字组成 此处使用AES-128-CBC加密模式，key需要为16位。
+    private static String KEY = "6L^U5R$0*brB%GG4";                 //加密用的Key 可以用26个字母和数字组成 此处使用AES-128-CBC加密模式，key需要为16位。
     private static String IV_PARAMETER = "2018040313591229";                        //偏移量
     public static final String KEY_ALGORITHM = "AES";                            //密钥算法
     public static final String CIPHER_ALGORITHM = "AES/CBC/PKCS5Padding";            //加解密算法/工作模式/填充方式,Java6.0支持PKCS5Padding填充方式,BouncyCastle支持PKCS7Padding填充方式

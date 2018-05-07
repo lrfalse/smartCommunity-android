@@ -5,4 +5,5 @@
     <string name="user_go_to_browse">去逛逛</string>
     <string name="user_forget_password">忘记密码</string>
     <string name="user_phone_number_login">手机号登录</string>
+    <string name="login_protocol"> <![CDATA[ 注册/登录即代表同意《<u>邻鲤用户使用协议</u>》]]></string>
 </resources>

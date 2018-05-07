@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import com.piaolac.core.ext.router
+import com.ysjkj.smart.community.mvp.ui.fragment.EmptyFragment
 import com.ysjkj.smart.community.mvp.ui.fragment.HomeFragment
 import com.ysjkj.smart.community.provider.router.RouterPath
 
@@ -11,7 +12,7 @@ import com.ysjkj.smart.community.provider.router.RouterPath
  * Created by yangqiang on 2018/4/3.
  */
 class HomePagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
-    val fragments = listOf(HomeFragment(), router(RouterPath.Life.HOME_FRAGMENT).navigation() as Fragment, HomeFragment(), HomeFragment())
+    val fragments = listOf(HomeFragment(), router(RouterPath.Life.HOME_FRAGMENT).navigation() as Fragment, EmptyFragment(), EmptyFragment())
     override fun getItem(position: Int): Fragment {
         return fragments[position]
     }

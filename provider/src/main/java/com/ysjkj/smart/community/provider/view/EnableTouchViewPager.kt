@@ -8,7 +8,7 @@ import android.view.MotionEvent
 /**
  * Created by yangqiang on 2018/4/3.
  */
-class EnableTouchViewPager @JvmOverloads constructor(context: Context?, attrs: AttributeSet?) : ViewPager(context, attrs) {
+class EnableTouchViewPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?) : ViewPager(context, attrs) {
 
     var isTouch = false
     override fun onTouchEvent(ev: MotionEvent?) = isTouch

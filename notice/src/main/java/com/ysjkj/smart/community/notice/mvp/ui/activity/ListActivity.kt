@@ -10,18 +10,30 @@ import com.piaolac.core.ext.dontAnima
 import com.piaolac.core.ext.linear
 import com.piaolac.core.ext.router
 import com.piaolac.core.glide.GlideApp
-import com.piaolac.core.mvp.EmptyPresenter
 import com.ysjkj.smart.community.notice.R
+import com.ysjkj.smart.community.notice.mvp.contract.ListContract
+import com.ysjkj.smart.community.notice.mvp.presenter.ListPresenter
 import com.ysjkj.smart.community.provider.router.RouterPath
 import kotlinx.android.synthetic.main.notice_activity_list.*
 
+/**
+ * 公告列表
+ */
 @Route(path = RouterPath.Notice.LIST)
-class ListActivity : BaseActivity<EmptyPresenter>() {
+class ListActivity : BaseActivity<ListPresenter>(), ListContract.View {
+    override fun onNoticeListResult() {
+    }
+
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
         withContent(R.layout.notice_activity_list).withToolbar("小区公告", true)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+
+        presenter {
+            noticeList(1, "1")
+        }
+
         rcl_notice.apply {
             dontAnima()
             linear(0, R.color.notice_transparent)

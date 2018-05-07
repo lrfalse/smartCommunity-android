@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.user_activity_set_house_info.*
 class SetHouseInfoActivity : BaseActivity<EmptyPresenter>() {
 
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
-        withContent(R.layout.user_activity_set_house_info).withToolbar("", true)
+        withContent(R.layout.user_activity_set_house_info).withToolbar("", true,unLine = false)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

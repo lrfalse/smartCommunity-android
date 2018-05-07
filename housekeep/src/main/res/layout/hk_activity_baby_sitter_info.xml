@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/provider_transparent_color"
+            android:elevation="0dp"
+            android:orientation="vertical"
+            android:stateListAnimator="@animator/appbar_elevation">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="306dp"
+                    android:background="@drawable/hk_baby_sitter_info_top_bg">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_head"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="58dp" />
+
+                    <TextView
+                        android:id="@+id/tx_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_head"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:text="名字"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tx_name"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="47dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="45岁"
+                            android:textColor="@color/hk_baby_sitter_subtitle_color"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:layout_weight="0"
+                            android:background="@color/hk_baby_sitter_info_v_line_color" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="3年经验"
+                            android:textColor="@color/hk_baby_sitter_subtitle_color"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_width="2dp"
+                            android:layout_height="10dp"
+                            android:layout_weight="0"
+                            android:background="@color/hk_baby_sitter_info_v_line_color" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="服务8290次"
+                            android:textColor="@color/hk_baby_sitter_subtitle_color"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="47dp"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/hk_baby_sitter_auth"
+                            android:gravity="center"
+                            android:text="身份证"
+                            android:textColor="@color/hk_gray_text_color"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/hk_baby_sitter_auth"
+                            android:gravity="center"
+                            android:text="培训合格证"
+                            android:textColor="@color/hk_gray_text_color"
+                            android:textSize="14dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="47dp"
+                            android:drawablePadding="10dp"
+                            android:drawableRight="@drawable/hk_baby_sitter_auth"
+                            android:gravity="center"
+                            android:text="健康证"
+                            android:textColor="@color/hk_gray_text_color"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/provider_include_gray_horizontal_line_dp1"></include>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="查看更多"
+                    android:id="@+id/tx_more"
+                    android:textColor="#801b1b1b"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <include layout="@layout/provider_include_gray_horizontal_line"></include>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_info"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tabMode="scrollable"
+                app:tabTextAppearance="@style/Provider.TextAppearance.BoldTabTitle" />
+
+            <include layout="@layout/provider_include_gray_horizontal_line_dp1"></include>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/provider_btn_pink_full_selector"
+        android:gravity="center"
+        android:text="咨询价格"
+        android:textColor="@color/white"
+        android:textSize="16dp" />
+</RelativeLayout>

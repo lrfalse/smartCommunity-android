@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ysjkj.smart.community.housekeep">
+
+    <application>
+        <activity android:name=".mvp.ui.activity.HomeActivity" />
+        <activity android:name=".mvp.ui.activity.BabySitterInfoActivity" />
+        <activity
+            android:name=".mvp.ui.activity.BabySitterApplyActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+    </application>
+
+</manifest>

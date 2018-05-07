@@ -31,7 +31,7 @@
 
         <item name="actionMenuTextColor">@color/colorAccent</item>
         <item name="android:textColor">@color/colorAccent</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">18dp</item>
         <!--设置不覆盖锚点-->
         <item name="overlapAnchor">false</item>
     </style><!-- ToolBar菜单样式.-->

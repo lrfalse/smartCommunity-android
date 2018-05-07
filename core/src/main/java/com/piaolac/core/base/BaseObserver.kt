@@ -1,5 +1,6 @@
 package com.piaolac.core.base
 
+import com.blankj.utilcode.util.LogUtils
 import io.reactivex.observers.DefaultObserver
 
 /**
@@ -21,6 +22,8 @@ open class BaseObserver<T> : DefaultObserver<T>() {
 
     override fun onError(e: Throwable) {
         onError.invoke(e)
+        LogUtils.e(e)
+        e.printStackTrace()
     }
 
     fun onError(block: (Throwable) -> Unit) {

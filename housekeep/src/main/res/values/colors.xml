@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="hk_gray_text_color">#1b1b1b</color>
+    <color name="hk_baby_sitter_subtitle_color">#cc1a1a1a</color>
+    <color name="hk_baby_sitter_info_v_line_color">#333333</color>
+    <color name="hk_edit_unline_color">#cccdd3</color>
+</resources>

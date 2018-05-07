@@ -17,6 +17,8 @@ import com.scwang.smartrefresh.header.MaterialHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter
 import com.trello.rxlifecycle2.LifecycleProvider
+import org.jetbrains.anko.backgroundColor
+import org.jetbrains.anko.dip
 
 
 class ViewBuilder(var ctx: Context) {
@@ -29,8 +31,8 @@ class ViewBuilder(var ctx: Context) {
     private var toolBarConfig: Toolbar.() -> Unit = {}
     private var multiStateConfig: MultiStateView.() -> Unit = {}
     private var smartRefreshConfig: SmartRefreshLayout.() -> Unit = {}
-    private var menuId = 0
     private var rootLayout: ViewGroup? = null
+    private var contentView: ViewGroup? = null
     fun withContent(resId: Int, lazyLoad: Boolean = false, isRoot: Boolean = false): ViewBuilder {
         this.contentResId = resId
         this.lazyLoad = lazyLoad
@@ -41,6 +43,7 @@ class ViewBuilder(var ctx: Context) {
                 orientation = LinearLayout.VERTICAL
                 if (contentResId != 0) {
                     (LayoutInflater.from(ctx).inflate(contentResId, null) as? ViewGroup)?.let {
+                        contentView = it
                         this.addView(it, allMathParams)
                     }
                 }
@@ -48,12 +51,13 @@ class ViewBuilder(var ctx: Context) {
         } else {
             if (contentResId != 0) {
                 rootLayout = (LayoutInflater.from(ctx).inflate(contentResId, null) as? ViewGroup)
+                contentView = rootLayout
             }
         }
         return this
     }
 
-    fun withToolbar(title: String = "", showBack: Boolean = false, backIconRes: Int = R.drawable.core_toolbar_back, menuId: Int = 0, stytle: Int = R.style.Toolbar_Theme, toolbar: Toolbar.() -> Unit = {}): ViewBuilder {
+    fun withToolbar(title: String = "", showBack: Boolean = false, backIconRes: Int = R.drawable.core_toolbar_back, menuId: Int = 0, stytle: Int = R.style.Toolbar_Theme, unLine: Boolean = true, toolbar: Toolbar.() -> Unit = {}): ViewBuilder {
         if (xmlIsRoot) {
             rootLayout?.apply {
                 findViewById<Toolbar>(R.id.common_toolbar_view)?.apply {
@@ -80,6 +84,9 @@ class ViewBuilder(var ctx: Context) {
                 }
                 this@ViewBuilder.toolbar = this
                 initToolbar(rootLayout, menuId)
+                if (unLine) {
+                    rootLayout?.addView(TextView(context).apply { backgroundColor = resources.getColor(R.color.toolbar_line_color) }, 1, ViewGroup.LayoutParams(matchParent, dip(1f)))
+                }
             }
 
         }
@@ -103,7 +110,7 @@ class ViewBuilder(var ctx: Context) {
                 id = R.id.common_multi_state_view
 
             }
-            initMultiStateView(rootLayout)
+            initMultiStateView(contentView)
         }
         return this
     }
@@ -121,7 +128,7 @@ class ViewBuilder(var ctx: Context) {
                 setTag(R.id.common_target_id, targetId)
                 id = R.id.common_refresh_view
             }
-            initSmartRefresh(rootLayout)
+            initSmartRefresh(contentView)
         }
 
         return this
@@ -155,7 +162,7 @@ class ViewBuilder(var ctx: Context) {
         }
     }
 
-    private fun initSmartRefresh(contentView: ViewGroup?) {
+    private fun initSmartRefresh(root: ViewGroup?) {
         smartRefreshLayout?.apply {
             setRefreshHeader(MaterialHeader(ctx))
             setRefreshFooter(ClassicsFooter(ctx))
@@ -172,18 +179,18 @@ class ViewBuilder(var ctx: Context) {
 
         smartRefreshLayout?.let { ref ->
 
-            contentView?.let { ct ->
+            root?.let { ct ->
                 var targetId: Int = ref.getTag(R.id.common_target_id).toString().toInt()
-                (if (targetId == 0) contentView else contentView.findViewById(targetId))?.let { target ->
+                (if (targetId == 0) root else root.findViewById(targetId))?.let { target ->
                     (target.parent as? ViewGroup)?.let { tp ->
                         tp.indexOfChild(target).apply {
                             tp.removeView(target)
-                            ref.addView(target, tp.layoutParams)
+                            ref.addView(target,this, target.layoutParams)
                             if (tp is MultiStateView) {
                                 tp.setViewForState(ref, MultiStateView.CONTENT)
                                 tp.setState(MultiStateView.CONTENT)
                             } else {
-                                tp.addView(ref, tp.layoutParams)
+                                tp.addView(ref,this, target.layoutParams)
                             }
                         }
                     }

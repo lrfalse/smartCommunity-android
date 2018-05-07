@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="25dp"
+    tools:context="com.ysjkj.smart.community.housekeep.mvp.ui.activity.BabySitterInfoActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="服务时间:2015/05/09~2018/3/3"
+        android:textColor="@color/hk_gray_text_color"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="服务用户:87663户"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/hk_gray_text_color"
+        android:textSize="15dp" />
+</LinearLayout>

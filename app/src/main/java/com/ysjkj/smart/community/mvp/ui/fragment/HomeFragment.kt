@@ -23,15 +23,18 @@ class HomeFragment : BaseFragment<EmptyPresenter>() {
 
     override fun initView(view: View?, savedInstanceState: Bundle?) {
         sp_communit.apply {
-            adapter = ArrayAdapter<String>(activity, R.layout.main_spinner_item_simple, R.id.tx_title, mutableListOf("金科阳光小镇", "金科阳光小镇2", "金科阳光小3"))
+            adapter = ArrayAdapter<String>(activity, R.layout.main_spinner_item_simple, R.id.tx_title, mutableListOf("阳光小镇", "阳光小镇2", "阳光小3"))
         }
 
-        (router(RouterPath.Notice.BANNER).navigation() as? Fragment)?.apply {
+        (router(RouterPath.Notice.BANNER_FRAGMENT).navigation() as? Fragment)?.apply {
             addFragment(R.id.fl_notice, this)
         }
-        (router(RouterPath.Activitie.BANNER).navigation() as? Fragment)?.apply {
-            addFragment(R.id.fl_activite, this)
+        (router(RouterPath.Main.HOME_MENU_FRAGMENT).navigation() as? Fragment)?.apply {
+            addFragment(R.id.fl_menu, this)
         }
 
+        (router(RouterPath.Activitie.BANNER_FRAGMENT).navigation() as? Fragment)?.apply {
+            addFragment(R.id.fl_activite, this)
+        }
     }
 }

@@ -4,8 +4,10 @@ import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.piaolac.core.base.BaseActivity
 import com.piaolac.core.base.ViewBuilder
+import com.piaolac.core.ext.jump
 import com.piaolac.core.ext.trimValue
 import com.piaolac.core.utils.RxUtils
+import com.ysjkj.smart.community.provider.base.BaseResponse
 import com.ysjkj.smart.community.provider.router.RouterPath
 import com.ysjkj.smart.community.user.R
 import com.ysjkj.smart.community.user.mvp.contract.RegisterContract
@@ -23,23 +25,45 @@ import java.util.concurrent.TimeUnit
  */
 @Route(path = RouterPath.UserCenter.REGISTER_ACCOUNT)
 class RegisterActivity : BaseActivity<RegisterPresenter>(), RegisterContract.View {
+    companion object {
+        const val PARAM_PHONE_NUMBER = "PHONE_NUMBER"
+        const val PARAM_CODE = "PARAM_CODE"
+    }
+
+    /**
+     * 验证码发送返回
+     */
     override fun onSendCodeResult(result: RegisterContract.Model.Result) {
-        toast("发送验证码:${result.isSuccess} ${result.data}")
         if (result.isSuccess) {
+            toast("发送验证码成功")
             loopValidaDisplay()
+        } else {
+            toast("发送验证码失败")
         }
     }
 
-    override fun onSubmitCodeResult(result: RegisterContract.Model.Result) {
-        toast("验证验证码:${result.isSuccess} ${result.data}")
+    /**
+     * 验证码提交返回
+     */
+    override fun onSubmitCodeResult(result: BaseResponse<String>) {
+
+        if (result.isSuccess()) {
+            jump(RouterPath.UserCenter.SET_PASSWORD) {
+                withString(PARAM_PHONE_NUMBER, et_phone.trimValue())
+                withString(PARAM_CODE, et_code.trimValue())
+            }
+            finish()
+        } else {
+            toast(result.statusMsg)
+        }
     }
 
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
-        withContent(R.layout.user_activity_register).withToolbar("", true)
+        withContent(R.layout.user_activity_register).withToolbar("", true, unLine = false)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        floating_action_button.onClick {
+        fbtn_next.onClick {
 
             if (checkPhone() && checkCode()) {
                 presenter {
@@ -48,6 +72,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter>(), RegisterContract.Vie
             }
 
         }
+
         btn_valida_code.onClick {
 
             if (checkPhone()) {
@@ -72,6 +97,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter>(), RegisterContract.Vie
             toast("请输入真确的手机号码")
             return false
         }
+
         return true
     }
 
@@ -92,7 +118,7 @@ class RegisterActivity : BaseActivity<RegisterPresenter>(), RegisterContract.Vie
      * 刷新获取验证码按钮
      */
     private fun loopValidaDisplay() {
-        val count = 5L
+        val count = 60L
         Observable.intervalRange(0, count + 1, 0, 1, TimeUnit.SECONDS)
                 .compose(RxUtils.androidTransformer()).subscribeBy(onNext = {
                     btn_valida_code.apply {

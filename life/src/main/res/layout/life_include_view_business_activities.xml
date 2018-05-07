@@ -31,7 +31,7 @@
             android:gravity="center"
             android:text="1/5"
             android:textColor="@color/black"
-            android:textSize="22dp" />
+            android:textSize="24dp" />
     </LinearLayout>
 
     <com.lsjwzh.widget.recyclerviewpager.RecyclerViewPager

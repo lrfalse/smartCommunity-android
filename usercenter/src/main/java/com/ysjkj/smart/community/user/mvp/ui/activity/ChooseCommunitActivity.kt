@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.user_activity_choose_communit.*
 class ChooseCommunitActivity : BaseActivity<EmptyPresenter>() {
 
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
-        withContent(R.layout.user_activity_choose_communit).withToolbar("", true)
+        withContent(R.layout.user_activity_choose_communit).withToolbar("", true, unLine = false)
 
     }
 

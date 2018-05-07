@@ -11,16 +11,15 @@ import com.trello.rxlifecycle2.kotlin.bindUntilEvent
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
 import io.reactivex.ObservableTransformer
-import java.util.concurrent.TimeUnit
 
 /**
  * Created by yangqiang on 2018/3/19.
  */
-class LifecycleTransformer<T>(private var delayMilliSeconds: Long = 500L,
-                              private var event: Any = ActivityEvent.DESTROY,
-                              private var lifecycleProvider: LifecycleProvider<*>) : ObservableTransformer<T, T> {
+class LifecycleTransformer<T>(
+        private var event: Any = ActivityEvent.DESTROY,
+        private var lifecycleProvider: LifecycleProvider<*>) : ObservableTransformer<T, T> {
     override fun apply(it: Observable<T>): ObservableSource<T> {
-        return it.delay(delayMilliSeconds, TimeUnit.MILLISECONDS)
+        return it
                 .compose(RxUtils.androidTransformer()).let {
                     return if ((lifecycleProvider is Activity && event !is ActivityEvent) || (lifecycleProvider is Fragment && event !is FragmentEvent)) {
                         it.bindToLifecycle(lifecycleProvider)

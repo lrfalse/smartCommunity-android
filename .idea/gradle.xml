@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/doorguard" />
+            <option value="$PROJECT_DIR$/housekeep" />
             <option value="$PROJECT_DIR$/life" />
             <option value="$PROJECT_DIR$/notice" />
             <option value="$PROJECT_DIR$/provider" />

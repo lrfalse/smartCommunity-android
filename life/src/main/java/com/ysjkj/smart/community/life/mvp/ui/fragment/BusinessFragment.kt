@@ -108,7 +108,7 @@ class BusinessFragment : BaseFragment<EmptyPresenter>() {
             tx_page_index.appendFontSpan(0.5f, "${this.adapter.itemCount}")
             addOnPageChangedListener { i, j ->
                 tx_page_index.text = "${j + 1}/"
-                tx_page_index.appendFontSpan(0.5f, "${this.adapter.itemCount}")
+                tx_page_index.appendFontSpan(0.5416f, "${this.adapter.itemCount}")
             }
         }
     }

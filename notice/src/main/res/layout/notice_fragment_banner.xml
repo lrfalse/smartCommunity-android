@@ -40,7 +40,7 @@
             app:mvInterval="3000"
             app:mvSingleLine="true"
             app:mvTextColor="@color/black"
-            app:mvTextSize="14dp" />
+            app:mvTextSize="15dp" />
 
         <TextView
             android:id="@+id/tx_more"

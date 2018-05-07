@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
             android:layout_weight="0"
-            android:src="@drawable/user_select_down" />
+            android:src="@drawable/provider_spinner_down" />
     </FrameLayout>
 
     <TextView
@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
             android:layout_weight="0"
-            android:src="@drawable/user_select_down" />
+            android:src="@drawable/provider_spinner_down" />
     </FrameLayout>
 
 

@@ -1,0 +1,9 @@
+<resources>
+    <declare-styleable name="CountdownView">
+        <attr name="cd_padding" format="dimension"></attr>
+        <attr name="cd_size" format="dimension"></attr>
+        <attr name="cd_format" format="string"></attr>
+        <attr name="cd_expiration" format="integer"></attr>
+        <attr name="cd_radius" format="dimension"></attr>
+    </declare-styleable>
+</resources>

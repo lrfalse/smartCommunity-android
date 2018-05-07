@@ -1,5 +1,6 @@
 package com.piaolac.core.base
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
@@ -10,6 +11,7 @@ import com.piaolac.core.mvp.IModel
 import com.piaolac.core.mvp.IView
 import com.piaolac.core.utils.ReflectionUtils
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
+import org.jetbrains.anko.toast
 
 /**
  * Created by yangqiang on 2018/3/14.
@@ -21,13 +23,15 @@ abstract class BaseActivity<out P : BasePresenter<IModel, IView>> : RxAppCompatA
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter?.context(this)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        presenter?.inject(this)
 //        translucentStatus(this)
         setContentView(ViewBuilder(this).apply {
             builder = this
         }.apply(initViewConfig()).createContent())
         ARouter.getInstance().inject(this)
         initView(savedInstanceState)
+        AppManager.addActivity(this)
     }
 
     abstract fun initView(savedInstanceState: Bundle?)
@@ -64,6 +68,23 @@ abstract class BaseActivity<out P : BasePresenter<IModel, IView>> : RxAppCompatA
         supportFragmentManager.beginTransaction().remove(fragment).commit()
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        AppManager.finishActivity(this)
+    }
+
+    var lastTime = 0L
+
+    override fun onBackPressed() {
+        System.currentTimeMillis().apply {
+            if (this - lastTime > 2 * 1000 && isTaskRoot) {
+                toast("再次点击退出应用")
+                lastTime = this
+            } else {
+                super.onBackPressed()
+            }
+        }
+    }
 
 }
 

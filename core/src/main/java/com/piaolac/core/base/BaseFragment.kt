@@ -2,6 +2,7 @@ package com.piaolac.core.base
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -24,18 +25,18 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
     private var isPrepared: Boolean = false
     private var isFirstLoad = true
     private var isLazyLoad: Boolean = false
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        presenter?.context(context)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        presenter?.inject(this)
         isFirstLoad = true
         isPrepared = true
-        return ViewBuilder(activity).apply {
+        return ViewBuilder(activity as FragmentActivity).apply {
             builder = this
             isLazyLoad = lazyLoad
         }.apply(initViewConfig()).createContent()
         ARouter.getInstance().inject(this)
     }
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (isLazyLoad) {
             lazyLoad()
@@ -43,6 +44,9 @@ abstract class BaseFragment<out P : BasePresenter<*, *>> : RxFragment(), Toolbar
             initView(view, savedInstanceState)
         }
     }
+
+
+
 
     abstract fun initView(view: View?, savedInstanceState: Bundle?)
     override fun onMenuItemClick(item: MenuItem?) = true

@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="10dp"
-                android:background="@drawable/activitie_detail_remark_gray_selector"
+                android:background="@drawable/provider_remark_gray_selector"
                 android:orientation="vertical">
 
                 <TextView

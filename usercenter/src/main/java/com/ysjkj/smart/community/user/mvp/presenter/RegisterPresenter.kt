@@ -1,6 +1,7 @@
 package com.ysjkj.smart.community.user.mvp.presenter
 
-import com.piaolac.core.mvp.BasePresenter
+import com.ysjkj.smart.community.provider.base.ProviderPresenter
+import com.ysjkj.smart.community.provider.transformer.LoadingTransformer
 import com.ysjkj.smart.community.user.mvp.contract.RegisterContract
 
 /**
@@ -8,14 +9,14 @@ import com.ysjkj.smart.community.user.mvp.contract.RegisterContract
  * @author yangqiang
  * @create 2018-04-18 上午11:26
  **/
-class RegisterPresenter : BasePresenter<RegisterContract.Model, RegisterContract.View>() {
+class RegisterPresenter : ProviderPresenter<RegisterContract.Model, RegisterContract.View>() {
 
     /**
      * 发送验证码
      */
     fun sendCode(phone: String) {
         model {
-            sendCode(phone).execute {
+            sendCode(phone).execute(LoadingTransformer(context)) {
                 onNext {
                     view {
                         onSendCodeResult(it)
@@ -30,7 +31,7 @@ class RegisterPresenter : BasePresenter<RegisterContract.Model, RegisterContract
      */
     fun submitCode(code: String, phone: String) {
         model {
-            submitCode(code, phone).execute {
+            submitCode(code, phone).execute(LoadingTransformer(context)) {
                 onNext {
                     view {
                         onSubmitCodeResult(it)

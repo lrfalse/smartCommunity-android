@@ -8,17 +8,15 @@
     android:orientation="vertical">
 
 
-    <com.piaolac.core.view.MarqueView
+    <TextView
         android:id="@+id/tx_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center_vertical"
         android:paddingLeft="10dp"
+        android:singleLine="true"
         android:text="重庆"
         android:textColor="@color/black"
-        android:singleLine="true"
-        android:ellipsize="marquee"
-        android:focusable="true"
-        android:textStyle="bold"
-        android:textSize="20dp" />
+        android:textSize="24dp"
+        android:textStyle="bold" />
 </LinearLayout>

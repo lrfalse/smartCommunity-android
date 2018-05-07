@@ -29,7 +29,7 @@ import org.jetbrains.anko.support.v4.dip
  * @author yangqiang
  * @create 2018-04-18 下午4:17
  **/
-@Route(path = RouterPath.Activitie.BANNER)
+@Route(path = RouterPath.Activitie.BANNER_FRAGMENT)
 class BannerFragment : BaseFragment<EmptyPresenter>() {
     override fun initViewConfig(): ViewBuilder.() -> Unit = {
         withContent(R.layout.activitie_fragment_banner)
@@ -68,7 +68,7 @@ class BannerFragment : BaseFragment<EmptyPresenter>() {
 
                 override fun onPageSelected(position: Int) {
                     tx_page_index.text = "${position + 1}/"
-                    tx_page_index.appendFontSpan(0.5f, "${data.size}")
+                    tx_page_index.appendFontSpan(0.5416f, "${data.size}")
                 }
 
             })

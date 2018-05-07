@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="bottom|right"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
@@ -42,7 +42,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/user_select_down" />
+                android:src="@drawable/user_location" />
         </LinearLayout>
     </LinearLayout>
 

@@ -7,6 +7,10 @@ import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
 import android.support.design.widget.TabLayout
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -52,9 +56,18 @@ fun Any.jump(url: String, context: Context? = null, reqCode: Int = -1, callBack:
     if (context == null) {
         ARouter.getInstance().build(url).apply(block).navigation()
     } else {
-        (context as? Activity)?.apply { ARouter.getInstance().build(url).apply(block).navigation(context, reqCode, callBack) }
-
-        ARouter.getInstance().build(url).apply(block).navigation(context, callBack)
+        if (context != null) {
+            when (context) {
+                is Activity -> {
+                    ARouter.getInstance().build(url).apply(block).navigation(context, reqCode, callBack)
+                }
+                else -> {
+                    ARouter.getInstance().build(url).apply(block).navigation(context, callBack)
+                }
+            }
+        } else {
+            ARouter.getInstance().build(url).apply(block).navigation()
+        }
     }
 
 }
@@ -209,7 +222,7 @@ fun TextView.appendDrawable(drawable: Drawable, begin: Int = 0, end: Int = 1): T
 
 /**---------------------------------------TextView begin --------------------------------**/
 
-fun TabLayout.wrapLine() {
+fun TabLayout.wrapLine(): TabLayout {
     post {
         //拿到tabLayout的mTabStrip属性
         val mTabStrip = getChildAt(0) as LinearLayout
@@ -242,7 +255,32 @@ fun TabLayout.wrapLine() {
             tabView.invalidate()
         }
     }
+    return this
 }
 
 
 /**---------------------------------------TextView end --------------------------------**/
+
+
+/**---------------------------------------ViewPager begin --------------------------------**/
+
+fun ViewPager.bindFragment(fm: FragmentManager, pagerItem: MutableList<PagerItem>) {
+    adapter = object : FragmentPagerAdapter(fm) {
+        override fun getItem(position: Int): Fragment {
+            return pagerItem[position].fragment
+        }
+
+        override fun getCount(): Int {
+            return pagerItem.size
+        }
+
+        override fun getPageTitle(position: Int): CharSequence {
+            return pagerItem[position].title
+        }
+
+    }
+
+}
+
+data class PagerItem(var fragment: Fragment, var title: String = "")
+/**---------------------------------------ViewPager end --------------------------------**/

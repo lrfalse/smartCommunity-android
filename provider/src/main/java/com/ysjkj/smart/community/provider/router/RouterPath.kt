@@ -11,6 +11,53 @@ object RouterPath {
              * 主页
              */
             const val HOME = "/main/home"
+
+            /**
+             * 主页菜单
+             */
+            const val HOME_MENU_FRAGMENT = "/main/menuFragment"
+        }
+    }
+
+    /**
+     * 家政
+     */
+    class HouseKeep {
+        companion object {
+            /**
+             * 家政首页
+             */
+            const val HOME = "/houseKeep/home"
+
+            /**
+             * 保姆
+             */
+            const val BABY_SITTER_FRAGMENT = "/houseKeep/babySitterFragment"
+
+            /**
+             * 保姆详情
+             */
+            const val BABY_SITTER_INFO = "/houseKeep/babySitterInfo"
+
+            /**
+             * 服务经验
+             */
+            const val BABY_SITTER_EXPERIENCE_FRAGMENT = "/houseKeep/babySitterExperienceFragment"
+
+            /**
+             * 培训背景
+             */
+            const val BABY_SITTER_TRAIN_FRAGMENT = "/houseKeep/babySitterTrainFragment"
+
+            /**
+             * 保姆申请界面
+             */
+            const val BABY_SITTER_APPLY = "/houseKeep/babySitterApply"
+
+            /**
+             * 清洁fragment
+             */
+            const val CLEAN_FRAGMENT = "/houseKeep/cleanFragment"
         }
     }
 
@@ -27,12 +74,12 @@ object RouterPath {
             /**
              * 商圈fragment
              */
-            const val BUSINESS_FRAGMENT ="/life/bussinessFragment"
+            const val BUSINESS_FRAGMENT = "/life/bussinessFragment"
 
             /**
              * 邻居一起来 fragment
              */
-            const val GROUP_SHOPPING_FRAGMENT ="/life/groupShoppingFragment"
+            const val GROUP_SHOPPING_FRAGMENT = "/life/groupShoppingFragment"
         }
     }
 
@@ -78,7 +125,7 @@ object RouterPath {
             /**
              * banner公告
              */
-            const val BANNER = "/notice/banner"
+            const val BANNER_FRAGMENT = "/notice/bannerFragment"
 
             /**
              * 公告列表
@@ -96,7 +143,7 @@ object RouterPath {
             /**
              * banner
              */
-            const val BANNER = "/activitie/banner"
+            const val BANNER_FRAGMENT = "/activitie/bannerFragment"
 
             /**
              * 列表界面

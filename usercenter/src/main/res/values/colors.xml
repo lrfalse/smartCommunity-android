@@ -3,4 +3,5 @@
     <color name="user_btn_pressed_color">#ef2c54</color>
     <color name="user_tx_gray_color">#747474</color>
     <color name="user_tx_gray_line_color">#a1a1a1</color>
+    <color name="user_login_protocol_color">#cc000000</color>
 </resources>

@@ -1,14 +1,10 @@
 package com.piaolac.core.mvp
 
+import android.app.Activity
 import android.content.Context
-import com.piaolac.core.base.BaseObserver
-import com.piaolac.core.transformer.BindViewTransformer
-import com.piaolac.core.transformer.LifecycleTransformer
+import android.support.v4.app.Fragment
 import com.piaolac.core.utils.ReflectionUtils
 import com.trello.rxlifecycle2.LifecycleProvider
-import com.trello.rxlifecycle2.android.ActivityEvent
-import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
 
 /**
  * Created by YangQiang on 2017/11/6.
@@ -16,13 +12,18 @@ import io.reactivex.ObservableTransformer
 abstract class BasePresenter<out M : IModel, out V : IView> {
     private var model: M? = ReflectionUtils.getSuperClassGenricType<M>(this, 0)
     private var view: V? = null
-    private var context: Context? = null
-    var lifecycleProvider: LifecycleProvider<Any>? = null
+    var context: Context? = null
+    open var lifecycleProvider: LifecycleProvider<Any>? = null
 
-    fun context(context: Context) {
-        this.context = context
-        (context as?V).apply { view = this }
-        (context as?LifecycleProvider<Any>).apply { lifecycleProvider = this }
+    fun inject(any: Any) {
+        (any as?Activity)?.let {
+            context = it
+        }
+        (any as?Fragment)?.let {
+            context = it.context
+        }
+        view = any as?V
+        lifecycleProvider = any as?LifecycleProvider<Any>
     }
 
     fun model(block: M.() -> Unit) {
@@ -36,17 +37,22 @@ abstract class BasePresenter<out M : IModel, out V : IView> {
         view?.apply(block)
     }
 
-    fun <T : Any> Observable<T>.execute(transformer: ObservableTransformer<T, T> = BindViewTransformer(lifecycleProvider),
-                                        delayMilliSeconds: Long = 500L,
-                                        event: Any = ActivityEvent.DESTROY,
-                                        baseObserver: BaseObserver<T>.() -> Unit) {
-        if (lifecycleProvider == null) {
-            this.compose(transformer).subscribe(BaseObserver<T>().apply(baseObserver))
-        } else {
-            this.compose(LifecycleTransformer(delayMilliSeconds, event, lifecycleProvider!!))
-                    .compose(transformer).subscribe(BaseObserver<T>().apply(baseObserver))
-        }
-
-    }
+//    fun <T : Any> Observable<T>.execute(transformer: ObservableTransformer<T, T> = BindViewTransformer(lifecycleProvider),
+//                                        delayMilliSeconds: Long = 500L,
+//                                        event: Any = ActivityEvent.DESTROY,
+//                                        baseObserver: BaseObserver<T>.() -> Unit) {
+//        if (lifecycleProvider == null) {
+//            this.delay(delayMilliSeconds, TimeUnit.MILLISECONDS)
+//                    .compose(transformer)
+//                    .subscribe(BaseObserver<T>().apply(baseObserver))
+//        } else {
+//            this.delay(delayMilliSeconds, TimeUnit.MILLISECONDS)
+//                    .compose(LifecycleTransformer(event, lifecycleProvider!!))
+//                    .compose(transformer).subscribe(BaseObserver<T>().apply(baseObserver).apply {
+//                    })
+//
+//        }
+//
+//    }
 
 }

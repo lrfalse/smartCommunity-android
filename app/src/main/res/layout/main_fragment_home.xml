@@ -2,9 +2,9 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:layout_height="match_parent">
+    android:focusableInTouchMode="true">
 
 
     <android.support.design.widget.AppBarLayout
@@ -25,25 +25,25 @@
 
             <FrameLayout
                 android:layout_width="170dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
+
 
                 <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/sp_communit"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
+                    android:layout_height="match_parent"
                     android:background="@null"
                     android:overlapAnchor="false"
                     android:spinnerMode="dropdown"></android.support.v7.widget.AppCompatSpinner>
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
                     android:layout_gravity="right|bottom"
-                    android:layout_marginBottom="-5dp"
-                    android:src="@drawable/user_select_down" />
+                    android:src="@drawable/provider_spinner_down" />
             </FrameLayout>
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
@@ -59,19 +59,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/white"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:background="@color/white"
             android:orientation="vertical">
 
             <FrameLayout
                 android:id="@+id/fl_notice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"></FrameLayout>
-            <TextView
+
+            <include layout="@layout/provider_include_gray_horizontal_line"></include>
+
+
+            <FrameLayout
+                android:id="@+id/fl_menu"
                 android:layout_width="match_parent"
-                android:background="@color/main_gray_bg"
-                android:layout_height="5dp" />
+                android:layout_height="wrap_content"></FrameLayout>
+
+            <include layout="@layout/provider_include_gray_horizontal_line"></include>
+
             <FrameLayout
                 android:id="@+id/fl_activite"
                 android:layout_width="match_parent"

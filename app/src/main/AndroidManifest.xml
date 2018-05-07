@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="16"
-        tools:overrideLibrary="cn.smssdk,cn.smssdk.gui,com.sdsmdg.harjot.materialshadows" />
+        tools:overrideLibrary="cn.smssdk,cn.smssdk.gui,com.airbnb.lottie" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -20,11 +20,7 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme,android:label">
         <activity android:name=".mvp.ui.activity.HomeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".mvp.ui.activity.LaunchActivity">
         </activity>

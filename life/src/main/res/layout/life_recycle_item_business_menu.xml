@@ -20,8 +20,8 @@
         android:id="@+id/tx_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textSize="12dp" />
 </LinearLayout>

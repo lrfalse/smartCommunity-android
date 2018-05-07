@@ -23,7 +23,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         config {
@@ -50,19 +49,14 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
-    if (!isUserModule.toBoolean()) {
-        implementation project(':usercenter')
-    }
-
+    implementation project(':usercenter')
     implementation project(':provider')
     implementation project(':doorguard')
     implementation project(':notice')
     implementation project(':verify')
     implementation project(':activitie')
     implementation project(':life')
+    implementation project(':housekeep')
 
 }

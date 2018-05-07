@@ -2,11 +2,13 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
+            <corners android:radius="3dp"></corners>
             <gradient android:endColor="@color/provider_btn_pink_pressed_color" android:startColor="@color/provider_btn_pink_pressed_color"></gradient>
         </shape>
     </item>
     <item>
         <shape>
+            <corners android:radius="3dp"></corners>
             <gradient android:endColor="@color/provider_btn_pink_normal_color" android:startColor="@color/provider_btn_pink_normal_color"></gradient>
         </shape>
     </item>
